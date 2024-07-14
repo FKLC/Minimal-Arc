@@ -1,13 +1,6 @@
-@media (prefers-color-scheme: dark) {
-  :root {
-    --custom-bg: #212738;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --custom-bg: #f1f1fa;
-  }
+:root {
+  --custom-bg: #f1f1fa;
+  --custom-gap: 10px;
 }
 
 body {
@@ -41,7 +34,7 @@ body {
 
 .titlebar-buttonbox-container {
   position: absolute;
-  right: 0;
+  right: var(--custom-gap);
   top: 9px;
   display: flex;
   justify-content: center;
@@ -110,12 +103,50 @@ body {
   color: var(--newtab-text-primary-color) !important;
 }
 
-#tabbrowser-tabpanels, browser[primary="true"] {
+#tabbrowser-tabpanels,
+browser[primary="true"] {
   border-radius: 10px !important;
 }
 
 #browser {
-  padding: 10px !important;
+  padding: var(--custom-gap) !important;
   padding-top: 0 !important;
-  gap: 10px !important;
+  gap: var(--custom-gap) !important;
+}
+
+@media (-moz-bool-pref: "userChrome.tabs.slim") or (-moz-bool-pref: "userChrome.slim") {
+  #navigator-toolbox {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --custom-bg: #212738;
+  }
+}
+
+@media (-moz-bool-pref: "userChrome.gaps.slim") or (-moz-bool-pref: "userChrome.slim") {
+  :root {
+    --custom-gap: 5px;
+  }
+}
+
+@media (-moz-bool-pref: "userChrome.urlbar.slim") or (-moz-bool-pref: "userChrome.slim") {
+  #urlbar-container {
+    --urlbar-container-height: 0px !important;
+  }
+
+  .titlebar-buttonbox-container {
+    top: 0px;
+  }
+
+  #urlbar-container[breakout] {
+    min-height: 0px !important;
+  }
+
+  .urlbar-input-container {
+    height: var(--urlbar-height) !important;
+  }
 }
