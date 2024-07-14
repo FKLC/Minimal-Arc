@@ -103,3 +103,7 @@ html:not([privatebrowsingmode="temporary"]) .sidebar-panel {
   background-color: transparent !important;
   color: var(--newtab-text-primary-color) !important;
 }
+
+html:not([privatebrowsingmode="temporary"]) browser[primary="true"] {
+  border-radius: 10px !important;
+}
