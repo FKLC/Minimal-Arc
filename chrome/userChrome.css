@@ -1,6 +1,7 @@
 :root {
   --custom-bg: #f1f1fa;
   --custom-gap: 10px;
+  --custom-top-gap: 0;
 }
 
 body {
@@ -106,7 +107,7 @@ browser[primary="true"] {
 
 #browser {
   padding: var(--custom-gap) !important;
-  padding-top: 0 !important;
+  padding-top: var(--custom-top-gap) !important;
   gap: var(--custom-gap) !important;
 }
 
@@ -167,5 +168,11 @@ browser[primary="true"] {
     .titlebar-buttonbox-container {
       top: 9px;
     }
+  }
+}
+
+@media (-moz-platform: windows) or (-moz-bool-pref: "userChrome.forcePaddingTop") {
+  :root[sizemode="fullscreen"] {
+    --custom-top-gap: var(--custom-gap);
   }
 }
