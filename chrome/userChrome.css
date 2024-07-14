@@ -1,5 +1,13 @@
-html {
-  --custom-bg: #f1f1fa;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --custom-bg: #212738;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --custom-bg: #f1f1fa;
+  }
 }
 
 body {
@@ -74,6 +82,7 @@ body {
   width: var(--uc-sidebar-width) !important;
   max-width: var(--uc-sidebar-width) !important;
   z-index: 1;
+  margin: 0px !important;
 }
 
 #main-window[sizemode="fullscreen"] #sidebar-box {
@@ -88,6 +97,7 @@ body {
   transition: all var(--uc-autohide-transition-duration)
     var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay-after) !important;
   min-width: var(--uc-sidebar-width) !important;
+  border-radius: 10px !important;
 }
 
 #sidebar-box:hover > #sidebar {
@@ -104,6 +114,8 @@ body {
   border-radius: 10px !important;
 }
 
-#tabbrowser-tabbox {
-  margin: 5px !important;
+#browser {
+  padding: 10px !important;
+  padding-top: 0 !important;
+  gap: 10px !important;
 }
