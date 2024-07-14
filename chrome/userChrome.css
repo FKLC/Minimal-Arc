@@ -114,13 +114,6 @@ browser[primary="true"] {
   gap: var(--custom-gap) !important;
 }
 
-@media (-moz-bool-pref: "userChrome.tabs.slim") or (-moz-bool-pref: "userChrome.slim") {
-  #navigator-toolbox {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --custom-bg: #212738;
@@ -148,5 +141,31 @@ browser[primary="true"] {
 
   .urlbar-input-container {
     height: var(--urlbar-height) !important;
+  }
+
+  #navigator-toolbox {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+@media (-moz-platform: macos) {
+  #titlebar {
+    height: 0px !important;
+  }
+
+  .titlebar-buttonbox-container {
+    right: auto;
+    top: 15px;
+  }
+
+  #TabsToolbar {
+    visibility: visible !important;
+  }
+
+  @media (-moz-bool-pref: "userChrome.urlbar.slim") or (-moz-bool-pref: "userChrome.slim") {
+    .titlebar-buttonbox-container {
+      top: 9px;
+    }
   }
 }
