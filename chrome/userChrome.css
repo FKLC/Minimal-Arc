@@ -107,3 +107,7 @@ html:not([privatebrowsingmode="temporary"]) .sidebar-panel {
 html:not([privatebrowsingmode="temporary"]) browser[primary="true"] {
   border-radius: 10px !important;
 }
+
+html:not([privatebrowsingmode="temporary"]) #tabbrowser-tabbox {
+  margin: 5px !important;
+}
