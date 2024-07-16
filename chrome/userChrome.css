@@ -171,8 +171,6 @@ browser[primary="true"] {
   }
 }
 
-@media (-moz-platform: windows) or (-moz-bool-pref: "userChrome.forcePaddingTop") {
-  :root[sizemode="fullscreen"] {
-    --custom-top-gap: var(--custom-gap);
-  }
+:root[sizemode="fullscreen"] {
+  --custom-top-gap: var(--custom-gap);
 }
