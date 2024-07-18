@@ -2,6 +2,7 @@
   --custom-bg: #f1f1fa;
   --custom-gap: 10px;
   --custom-top-gap: 0;
+  --custom-border-radius: 10px;
 }
 
 body {
@@ -87,7 +88,7 @@ body {
   transition: all var(--uc-autohide-transition-duration)
     var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay-after) !important;
   min-width: var(--uc-sidebar-width) !important;
-  border-radius: 10px !important;
+  border-radius: var(--custom-border-radius) !important;
 }
 
 #sidebar-box:hover > #sidebar {
@@ -102,7 +103,7 @@ body {
 
 #tabbrowser-tabpanels,
 browser[primary="true"] {
-  border-radius: 10px !important;
+  border-radius: var(--custom-border-radius) !important;
 }
 
 #browser {
@@ -173,4 +174,11 @@ browser[primary="true"] {
 
 :root[sizemode="fullscreen"] {
   --custom-top-gap: var(--custom-gap);
+}
+
+@media (-moz-bool-pref: "userChrome.gapless") {
+  :root {
+    --custom-gap: 0px;
+    --custom-border-radius: 0px;
+  }
 }
